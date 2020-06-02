@@ -1,0 +1,36 @@
+.page-header{
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    
+}
+
+.page-header h1, .page-header h1 a {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 38px;
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Tangerine:bold,bolditalic','Inconsolata:italic','Droid+Sans', serif;
+    font-size: 40px;
+}
+.date {
+    color: #828282;
+}
+
+.post {
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+.post h1,h2 a {
+    color: #000000;
+}
+.post h1,h2 a:visited {
+    color: purple;
+}
