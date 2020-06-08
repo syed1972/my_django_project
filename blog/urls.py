@@ -13,6 +13,7 @@ urlpatterns = [
 
     path('post/<int:pk>/comment/',views.add_comment_to_post, name='add_comment_to_post'),
 
+    path('post/<int:pk>/remove/',views.comment_remove, name='comment_remove'),
     # path('accounts/logout/', LogoutView.as_view(), name='logout', kwargs={'next_page': 'logout'}),
 
 
