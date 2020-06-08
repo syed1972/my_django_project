@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Post,Comment
 from .forms import PostForm,CommentForm
+from django.contrib.auth import authenticate
 
 # Create your views here.
 def post_list(request):
@@ -76,3 +77,9 @@ def comment_remove(request,pk):
     comment=get_object_or_404(Comment,pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+def comment_approve(request,pk):
+    comment=get_object_or_404(Comment,pk=pk)
+    comment.approve()
+    return redirect('post_detail', pk=comment.post.pk)
+
