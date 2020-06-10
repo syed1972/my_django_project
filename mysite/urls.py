@@ -18,6 +18,8 @@ from django.urls import path,include
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView
 # from django.contrib.auth import views as auth_views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +28,8 @@ urlpatterns = [
     # path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
     path('accounts/logout/', view=LogoutView.as_view(), name='logout', kwargs={'next_page': '/'}),
     
-
     
     path('', include('blog.urls'))
 ]
+
+urlpatterns += staticfiles_urlpatterns()
