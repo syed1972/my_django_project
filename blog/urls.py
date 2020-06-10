@@ -21,6 +21,7 @@ urlpatterns = [
      path('comment/<int:pk>/approve/',views.comment_approve, name='comment_approve'),
     # path('accounts/logout/', LogoutView.as_view(), name='logout', kwargs={'next_page': 'logout'}),
 
+    path('signup/', views.signup, name='signup'),
 
 
 ]
