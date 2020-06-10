@@ -58,6 +58,13 @@ def post_publish(request,pk):
     post.publish()
     return redirect('post_detail', pk=post.pk)
 
+@login_required
+def post_delete(request,pk):
+    post=get_object_or_404(Post,pk=pk)
+    post.delete()
+    return redirect('/', pk=post.pk)
+
+
 
 @login_required
 def add_comment_to_post(request, pk):

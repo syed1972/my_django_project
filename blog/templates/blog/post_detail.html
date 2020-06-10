@@ -15,8 +15,13 @@
         {% endif %}
 
         {% if user.is_authenticated %}
+
         <a href="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-user-edit fa-2x"></i></a>
+
         {% endif %}
+
+        <a href="{% url 'post_delete' pk=post.pk %}" 
+        onclick="return confirm('Are you sure, you want delete the post?')"><i class="fas fa-user-times fa-2x"></i></a>
 
         <h1>{{post.title}}</h1>
         <p>{{post.text | markdown | safe }}</p>
@@ -33,9 +38,12 @@
                     {{comment.created_date}}
                 </div>
                 {% if not comment.approved  and user.is_superuser %}
+
                     <a href="{% url 'comment_approve' pk=comment.pk %}"><i class="fas fa-check-square"></i></a>
                     <a href="{% url 'comment_remove' pk=comment.pk %}"><i class="fas fa-trash-alt"></i></a>
+
                 {% endif %}
+
                 <strong>{{comment.auther}}</strong> 
                 <p> {{comment.text | markdown | safe | linebreaksbr }}</p>
             </div>
